@@ -8,6 +8,7 @@ class HomeContainer extends React.Component {
   }
 
   handleSubmitCity = (e) => {
+    e.preventDefault();
     this.props.history.push({
       pathname: '/forecast/' + this.state.cityName,
       state: {
