@@ -1,7 +1,7 @@
 {
-  "name": "github-battle",
+  "name": "fancy-weather-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple weather app written in React that gets weather from the Open Weather API. Made in accordance with the React Training Curriculum.",
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
