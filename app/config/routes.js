@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from '../components/Home';
+import Navbar from '../components/Navbar.js';
+import ForecastComponent from '../components/ForecastComponent.js';
 
 var routes = (
-<Router>
-  <div id="container" >
-    <div id="navbar" style={{padding: '0.5em', background: '#ccc', width: '100%'}}>
-      Hello from navbar
+  <Router>
+    <div id="container" >
+      <Navbar />
+      <Route exact path="/" component={Home} />
+      <Route path="/forecast/:city" component={ForecastComponent} />
     </div>
-
-    <Route path="/" component={Home} />
-  </div>
-</Router>
+  </Router>
 );
 
 module.exports = routes;
