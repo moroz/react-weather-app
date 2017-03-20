@@ -1,12 +1,13 @@
 import React from 'react';
 import weatherHelper from '../utils/weatherHelper';
+import WeatherIcon from './WeatherIcon';
 
 function WeatherData (props) {
   var w = props.day;
   var time = weatherHelper.parseTime(w.dt);
   return (
-    <div className="col-sm-4" style={{height: '18em'}}>
-      <img src='./app/images/weather-icons/10d.svg' />
+    <div className="col-sm-4 text-center" style={{height: '18em'}}>
+      <WeatherIcon code={w.weather[0].icon} />
       <p>{time.toDateString()}</p>
       <p>Temp: {w.temp.day} C</p>
       <p>Rain: {w.rain} mm</p>
