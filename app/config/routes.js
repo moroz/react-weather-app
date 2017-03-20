@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import GetCityContainer from '../containers/GetCityContainer';
 import Navbar from '../components/Navbar';
 import ForecastContainer from '../containers/ForecastContainer';
