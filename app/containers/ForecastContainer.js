@@ -1,6 +1,7 @@
 import React from 'react';
 import WeatherData from '../components/WeatherData';
 import APIHelper from '../utils/APIHelper';
+import Header from '../components/Header';
 
 function puke (obj) {
   return <pre>{JSON.stringify(obj, null, ' ')}</pre>;
@@ -32,7 +33,13 @@ class ForecastContainer extends React.Component {
       var days = this.state.weatherInfo.list.map(day => {
         return <WeatherData key={day.dt} day={day} />;
       });
-      return <div><h2>{this.state.weatherInfo.city.name}, {this.state.weatherInfo.city.country}</h2>{days}</div>
+      var city = this.state.weatherInfo.city;
+      return (
+        <div>
+          <Header text={city.name + ", " + city.country} />
+          {days}
+        </div>
+      );
     }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GetCity from '../components/GetCity';
+import Header from '../components/Header.js';
 
 class HomeContainer extends React.Component {
   state = {
@@ -25,7 +26,8 @@ class HomeContainer extends React.Component {
 
   render = () => {
     return (
-      <div className="col-sm-12 text-center">
+      <div className="get-city-container col-sm-12 text-center">
+        <Header text="Check the weather with my fancy app" />
         <h2>Enter city name</h2>
         <GetCity cityName={this.state.cityName} onSubmitCity={this.handleSubmitCity} onUpdateCity={this.handleUpdateCity} />
       </div>

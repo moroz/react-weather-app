@@ -3,8 +3,12 @@ var styles = {
     marginTop: '15px'
   },
   squareImg: {
-    width: '8em',
-    height: '8em',
+    width: '40%',
+    height: '40%',
+    marginBottom: '1em'
+  },
+  navbar: {
+    display: "flex",
   }
 }
 

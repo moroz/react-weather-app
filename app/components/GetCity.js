@@ -8,7 +8,7 @@ function GetCity (props) {
       <input type="text" onChange={props.onUpdateCity}
         className="form-control" placeholder="Eg. Taipei..."
         value={props.cityName} />
-      <button type="submit" className="btn btn-primary"
+      <button type="submit" className="btn btn--green"
         style={styles.space} onClick={props.onSubmitCity}>
         Get Weather
       </button>
