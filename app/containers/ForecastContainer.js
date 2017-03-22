@@ -11,12 +11,10 @@ class ForecastContainer extends React.Component {
   state = {
     isLoading: true,
     weatherInfo: {},
-    city: {}
   }
 
   componentDidMount = () => {
-    var cityName = this.props.location.state ?
-      this.props.location.state.cityName : "Koszalin";
+    var cityName = this.props.match.params.city;
     APIHelper.getWeather(cityName).then(info => {
       this.setState({
         isLoading: false,
@@ -25,14 +23,23 @@ class ForecastContainer extends React.Component {
     });
   }
 
+  handleClick = (weather) => {
+    this.props.history.push({
+      pathname: '/details/' + this.props.match.params.city,
+      state: {
+        weather: weather
+      }
+    })
+  }
+
   render = () => {
     if (this.state.isLoading) {
       return <div>LOADING</div>;
     } else {
-      var days = this.state.weatherInfo.list.map(day => {
-        return <WeatherData key={day.dt} day={day} />;
-      });
       var city = this.state.weatherInfo.city;
+      var days = this.state.weatherInfo.list.map(day => {
+        return <WeatherData key={day.dt} day={day} handleClick={this.handleClick} />;
+      });
       return (
         <div>
           <Header text={city.name + ", " + city.country} />
