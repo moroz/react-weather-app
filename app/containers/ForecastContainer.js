@@ -18,7 +18,6 @@ class ForecastContainer extends React.Component {
     var cityName = this.props.location.state ?
       this.props.location.state.cityName : "Koszalin";
     APIHelper.getWeather(cityName).then(info => {
-      console.log(info.data);
       this.setState({
         isLoading: false,
         weatherInfo: info.data
