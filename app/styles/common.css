@@ -1,14 +1,18 @@
 html {
   font-size: 12px;
+  background: url(../images/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
 }
 
 body {
-  background: #011457;
+  background: rgba(16,43,143,0.6);
   color: #fff;
-}
-
-body {
-  font-family: "Open Sans";
+  min-height: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 
 .btn--green {

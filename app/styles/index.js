@@ -9,6 +9,8 @@ var styles = {
   },
   navbar: {
     display: "flex",
+    justifyContent: 'space-between',
+    padding: '5px'
   }
 }
 
