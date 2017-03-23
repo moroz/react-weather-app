@@ -6,11 +6,11 @@ class WeatherData extends React.Component {
 
   render = () => {
     var w = this.props.day;
-    var time = weatherHelper.parseTime(w.dt);
+    var time = weatherHelper.displayTime(w.dt);
     return (
       <div className="weather-data col-sm-4 text-center" onClick={this.props.handleClick} >
         <WeatherIcon code={w.weather[0].icon} />
-        <p>{time.toDateString()}</p>
+        <p>{time}</p>
         <p>Temp: {w.temp.day} C</p>
         <p>Rain: {w.rain} mm</p>
         <p>{w.weather[0].description}</p>

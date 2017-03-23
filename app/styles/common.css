@@ -45,3 +45,7 @@ p {
 .weather-data {
   height: 15em;
 }
+
+.weather-details p {
+  font-size: 1.9rem;
+}
